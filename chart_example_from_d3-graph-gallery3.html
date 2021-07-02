@@ -67,7 +67,7 @@ var svg = d3.select("#my_dataviz")
 
   var mousemove = function(d) {
     tooltip
-      .html("The exact value of<br>the Ground Living area is: " + d.GrLivArea)
+      .html("The exact value of<br>the Ground Living area is: " + d.Polarity)
       .style("left", (d3.mouse(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -86,7 +86,7 @@ var svg = d3.select("#my_dataviz")
     .data(data.filter(function(d,i){return i<50})) // the .filter part is just to keep a few dots on the chart, not all of them
     .enter()
     .append("circle")
-      .attr("cx", function (d) { return x(d.GrLivArea); } )
+      .attr("cx", function (d) { return x(d.Polarity); } )
       .attr("cy", function (d) { return y(d.SalePrice); } )
       .attr("r", 7)
       .style("fill", "#69b3a2")
